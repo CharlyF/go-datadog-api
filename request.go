@@ -174,8 +174,9 @@ func (client *Client) doJsonRequestUnredacted(method, api string,
 	if out == nil {
 		return nil
 	}
-
-	return json.Unmarshal(body, &out)
+	err = json.Unmarshal(body, &out)
+	fmt.Printf("out here is %#v \n", out)
+	return err
 }
 
 // doRequestWithRetries performs an HTTP request repeatedly for maxTime or until

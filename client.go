@@ -27,6 +27,10 @@ type Client struct {
 
 	//Option to specify extra headers like User-Agent
 	ExtraHeader map[string]string
+
+	// RateLimiting is used to store the rate limitting stats.
+	// More information in the official documentation: https://docs.datadoghq.com/api/?lang=bash#rate-limiting
+	RateLimitingStats map[string]string
 }
 
 // valid is the struct to unmarshal validation endpoint responses into.
