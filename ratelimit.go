@@ -9,7 +9,7 @@ import (
 // The list of Rate Limited Endpoints of the Datadog API.
 // https://docs.datadoghq.com/api/?lang=bash#rate-limiting
 var (
-	RateLimitedEndpoints = map[string]string{
+	rateLimitedEndpoints = map[string]string{
 		"/v1/query":               "GET",
 		"/v1/input":               "GET",
 		"/v1/metrics":             "GET",
@@ -21,7 +21,7 @@ var (
 )
 
 func isRateLimited(method string, endpoint string) (limited bool, shortEndpoint string) {
-	for e, m := range RateLimitedEndpoints {
+	for e, m := range rateLimitedEndpoints {
 		if strings.HasPrefix(endpoint, e) && m == method {
 			return true, e
 		}

@@ -34,10 +34,10 @@ type Client struct {
 }
 
 type RateLimit struct {
-	limit     string
-	period    string
-	reset     string
-	remaining string
+	Limit     string
+	Period    string
+	Reset     string
+	Remaining string
 }
 
 // valid is the struct to unmarshal validation endpoint responses into.
